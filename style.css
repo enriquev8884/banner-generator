@@ -16,9 +16,10 @@ h2 {
     margin-top: 0px;
     margin-bottom: 5px;
 }
+
 h4 {
     color: black;
-    padding-top: 0px;
+    padding-top: 4px;
     margin-bottom: 1.5px;
     font-family: 'Questrial', sans-serif;
     font-size: 40px;
@@ -27,7 +28,7 @@ h4 {
 #banner {
     background-color: #ff3333;
     border-radius: 45px;
-    display: none;
+    /*display: none;*/
     margin: auto;
     padding-top: 5px;
     width: 80%;
@@ -38,11 +39,18 @@ h4 {
     padding: 0px 0px 400px 0px;
 }
 
-#bottomSticker{
+#bottomSticker_banner {
     background-color: #ff3333;
     padding: 0px 0px 50px 0px;
     border-radius: 0px 0px 45px 45px;
 }
+
+#bottomSticker_form {
+    background-color: #ff3333;
+    padding: 0px 0px 50px 0px;
+    border-radius: 0px 0px 45px 45px;
+}
+
 #form {
     background-color: #ff3333;
     border-radius: 45px;
@@ -55,7 +63,7 @@ h4 {
 
 #userForm {
     background-color: white;
-    padding: 0px 0px 200px 0px;
+    padding: 0px 0px 80px 0px;
 }
 
 label {
@@ -65,6 +73,30 @@ label {
     font-family: 'Questrial', sans-serif;
     font-size: 35px;
 }
-#id{
+
+#id {
     margin-bottom: 15px;
+}
+
+#userInput {
+    color: black;
+    font-family: 'Indie Flower', cursive;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-size: 100px;
+}
+
+#userName {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    height: 20px;
+    width: 200px;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: black;
+    outline: 0;
 }

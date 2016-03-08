@@ -8,17 +8,36 @@
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
     <!--font-family: 'Questrial', sans-serif;-->
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <!--font-family: 'Indie Flower', cursive;-->
     <script>
         $(function() {
-            $('#userForm input').click('change', function() {
-                 ($('input[name="color"][value="red"]:checked', '#userForm')), 
-                    $('#form').hide();
-                    $('#banner').css('background-color', 'purple').show();
-                    $('#bottomSticker').css('background-color', 'purple').show();
-                
+            // $('#banner').css("display", "none");
+
+
+
+            $("#submit").click(function() {
+
+                var user_name = $('#userName').val()
+                $('#userInput').html(user_name);
+
+
+                var userColor = $("input[name='color']:checked", '#userForm').val();
+                $('#banner').css("background-color", userColor);
+                $('#bottomSticker_banner').css("background-color", userColor);
+                $('#form').fadeOut(20000); //.css("display", "none");
+                $('#bottomSticker_form').fadeOut(20000);
+                $('#banner').fadeIn(20000); //.css("display", "block");
+                $('#bottomSticker_banner').fadeIn(20000);
+
+
+                // $('#userForm input').click('change', function() {
+                //     ($('input[name="color"][value="red"]:checked', '#userForm'))
+                //     $('#form').hide();
+                //     $('#banner').css('background-color', 'blue').show();
+                //     $('#bottomSticker').css('background-color', '#ff3333').show();
+
             });
-
-
         });
     </script>
 </head>
@@ -32,7 +51,7 @@
             <form id="userForm">
                 <h4>Name:</h4>
                 <br>
-                <input type="text" name="userName">
+                <input id="userName" type="text" name="userName" placeholder="Name">
                 <h4>Color:</h4>
                 <input id="id" type="radio" name="color" value="red">
                 <label for="red">Red</label>
@@ -42,17 +61,18 @@
                 <br>
                 <input id="id" type="radio" name="color" value="purple">
                 <label for="purple">Purple</label>
-                <input type="submit" id="submit" value="Check">
+                <br>
+                <input type="submit" id="submit" value="Generate!">
             </form>
         </div>
-        <div id="bottomSticker"></div>
+        <div id="bottomSticker_form"></div>
     </div>
     <div id="banner">
         <div id="font">
             <h1>Hello </h1>
             <h2>my name is</h2>
-            <div id="userInput"></div>
-            <div id="bottomSticker"></div>
+            <div id="userInput">name</div>
+            <div id="bottomSticker_banner"></div>
         </div>
     </div>
 </body>
