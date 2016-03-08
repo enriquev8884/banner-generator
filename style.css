@@ -1,0 +1,70 @@
+#font {
+    letter-spacing: 1.5px;
+    font-family: 'Questrial', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 115px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+h2 {
+    font-size: 60px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+h4 {
+    color: black;
+    padding-top: 0px;
+    margin-bottom: 1.5px;
+    font-family: 'Questrial', sans-serif;
+    font-size: 40px;
+}
+
+#banner {
+    background-color: #ff3333;
+    border-radius: 45px;
+    display: none;
+    margin: auto;
+    padding-top: 5px;
+    width: 80%;
+}
+
+#userInput {
+    background-color: white;
+    padding: 0px 0px 400px 0px;
+}
+
+#bottomSticker{
+    background-color: #ff3333;
+    padding: 0px 0px 50px 0px;
+    border-radius: 0px 0px 45px 45px;
+}
+#form {
+    background-color: #ff3333;
+    border-radius: 45px;
+    margin: auto;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    width: 80%;
+    text-align: center;
+}
+
+#userForm {
+    background-color: white;
+    padding: 0px 0px 200px 0px;
+}
+
+label {
+    color: black;
+    padding-top: 10px;
+    margin-bottom: 3px;
+    font-family: 'Questrial', sans-serif;
+    font-size: 35px;
+}
+#id{
+    margin-bottom: 15px;
+}

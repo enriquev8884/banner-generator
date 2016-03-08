@@ -2,18 +2,59 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>jQuery Template</title>
-  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-  <script>
-    $(function() {
+    <meta charset="UTF-8">
+    <title>jQuery Template</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <!--font-family: 'Questrial', sans-serif;-->
+    <script>
+        $(function() {
+            $('#userForm input').click('change', function() {
+                 ($('input[name="color"][value="red"]:checked', '#userForm')), 
+                    $('#form').hide();
+                    $('#banner').css('background-color', 'purple').show();
+                    $('#bottomSticker').css('background-color', 'purple').show();
+                
+            });
 
-    });
-  </script>
+
+        });
+    </script>
 </head>
 
 <body>
-    <div></div>
+    <div id="form">
+        <div id="font">
+            <h2>Hello Sticker <br>Maker!</h2>
+        </div>
+        <div id="userForm">
+            <form id="userForm">
+                <h4>Name:</h4>
+                <br>
+                <input type="text" name="userName">
+                <h4>Color:</h4>
+                <input id="id" type="radio" name="color" value="red">
+                <label for="red">Red</label>
+                <br>
+                <input id="id" type="radio" name="color" value="blue">
+                <label for="blue">Blue</label>
+                <br>
+                <input id="id" type="radio" name="color" value="purple">
+                <label for="purple">Purple</label>
+                <input type="submit" id="submit" value="Check">
+            </form>
+        </div>
+        <div id="bottomSticker"></div>
+    </div>
+    <div id="banner">
+        <div id="font">
+            <h1>Hello </h1>
+            <h2>my name is</h2>
+            <div id="userInput"></div>
+            <div id="bottomSticker"></div>
+        </div>
+    </div>
 </body>
 
 </html>
