@@ -10,32 +10,28 @@
     <!--font-family: 'Questrial', sans-serif;-->
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <!--font-family: 'Indie Flower', cursive;-->
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <!--font-family: 'Permanent Marker', cursive;-->
+    <link href='https://fonts.googleapis.com/css?family=Petit+Formal+Script' rel='stylesheet' type='text/css'>
+    <!--font-family: 'Petit Formal Script', cursive;-->
     <script>
         $(function() {
-            // $('#banner').css("display", "none");
+            $('#banner').css("display", "none");
 
 
 
             $("#submit").click(function() {
-
-                var user_name = $('#userName').val()
-                $('#userInput').html(user_name);
+                var userFont = $("input[name='font']:checked", '#userForm').val();
+                var user_name = $('#userName').val();
+                $('#userInput').html(user_name).css("font-family", userFont);
 
 
                 var userColor = $("input[name='color']:checked", '#userForm').val();
                 $('#banner').css("background-color", userColor);
                 $('#bottomSticker_banner').css("background-color", userColor);
-                $('#form').fadeOut(20000); //.css("display", "none");
-                $('#bottomSticker_form').fadeOut(20000);
-                $('#banner').fadeIn(20000); //.css("display", "block");
-                $('#bottomSticker_banner').fadeIn(20000);
-
-
-                // $('#userForm input').click('change', function() {
-                //     ($('input[name="color"][value="red"]:checked', '#userForm'))
-                //     $('#form').hide();
-                //     $('#banner').css('background-color', 'blue').show();
-                //     $('#bottomSticker').css('background-color', '#ff3333').show();
+                $('#form').fadeOut(2);
+                $('#banner').fadeIn(200);
+                $('#bottomSticker_banner').fadeIn(200);
 
             });
         });
@@ -45,27 +41,37 @@
 <body>
     <div id="form">
         <div id="font">
-            <h2>Hello Sticker <br>Maker!</h2>
-        </div>
-        <div id="userForm">
-            <form id="userForm">
+            <h3>Hello Sticker <br>Maker!</h3>
+            <div id="userForm">
                 <h4>Name:</h4>
                 <br>
                 <input id="userName" type="text" name="userName" placeholder="Name">
-                <h4>Color:</h4>
-                <input id="id" type="radio" name="color" value="red">
-                <label for="red">Red</label>
-                <br>
-                <input id="id" type="radio" name="color" value="blue">
-                <label for="blue">Blue</label>
-                <br>
-                <input id="id" type="radio" name="color" value="purple">
-                <label for="purple">Purple</label>
-                <br>
-                <input type="submit" id="submit" value="Generate!">
-            </form>
+                <div id="colorStyle">
+                    <h4>Color:</h4>
+                    <input id="id" type="radio" name="color" value="#ff3333">
+                    <label for="red">Red</label>
+                    <br>
+                    <input id="id" type="radio" name="color" value="#3333ff">
+                    <label for="blue">Blue</label>
+                    <br>
+                    <input id="id" type="radio" name="color" value="#9900cc">
+                    <label for="purple">Purple</label>
+                    <br>
+                    <h4>Font:</h4>
+                    <input id="id" type="radio" name="font" value="'Indie Flower', cursive">
+                    <label id="font1" for="red">Indie Flower</label>
+                    <br>
+                    <input id="id" type="radio" name="font" value="'Permanent Marker', cursive">
+                    <label id="font2" for="blue">Permanent Marker</label>
+                    <br>
+                    <input id="id" type="radio" name="font" value="'Petit Formal Script', cursive">
+                    <label id="font3" for="purple">Script</label>
+
+                </div>
+                <button type="submit" id="submit">Generate!
+            </div>
+            <div id="bottomSticker_form"></div>
         </div>
-        <div id="bottomSticker_form"></div>
     </div>
     <div id="banner">
         <div id="font">
