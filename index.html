@@ -18,7 +18,26 @@
         $(function() {
             $('#banner').css("display", "none");
 
+            $('#random').click(function() {
+                var user_name = $('#userName').val();
+                var ranColor = ["#ff3333", "#3333ff", "#9900cc"];
+                var ranFont = ["'Indie Flower', cursive", "'Permanent Marker', cursive", "'Petit Formal Script', cursive"];
+                var fontPick = ranFont[Math.floor(Math.random() * ranFont.length)];
+                var colorPick = ranColor[Math.floor(Math.random() * ranColor.length)];
+                $('#userInput').html(user_name).css("font-family", fontPick);
+                $('#banner').css("background-color", colorPick);
+                $('#bottomSticker_banner').css("background-color", colorPick);
+                $('#form').fadeOut(2);
+                $('#banner').fadeIn(200);
+                $('#bottomSticker_banner').fadeIn(200);
+                $('#reset').click(function() {
+                    location.reload();
+                });
 
+
+
+
+            })
 
             $("#submit").click(function() {
                 var userFont = $("input[name='font']:checked", '#userForm').val();
@@ -33,6 +52,7 @@
                 $('#banner').fadeIn(200);
                 $('#bottomSticker_banner').fadeIn(200);
 
+
             });
         });
     </script>
@@ -43,7 +63,7 @@
         <div id="font">
             <h3>Hello Sticker <br>Maker!</h3>
             <div id="userForm">
-                <h4>Name:</h4>
+                <h4 style="padding-top: px">Name:</h4>
                 <br>
                 <input id="userName" type="text" name="userName" placeholder="Name">
                 <div id="colorStyle">
@@ -68,17 +88,20 @@
                     <label id="font3" for="purple">Script</label>
 
                 </div>
-                <button type="submit" id="submit">Generate!
+                <button type="submit" id="submit">Generate
+                    <br>
+                    <button type="submit" id="random">Randomize!
             </div>
             <div id="bottomSticker_form"></div>
         </div>
     </div>
-    <div id="banner">
+    <div id="banner" style="margin: auto">
         <div id="font">
             <h1>Hello </h1>
-            <h2>my name is</h2>
-            <div id="userInput">name</div>
+            <h2 style="font-size: 100px; width:100%">my name is</h2>
+            <div id="userInput"></div>
             <div id="bottomSticker_banner"></div>
+            <button type="submit" id="reset">Reset
         </div>
     </div>
 </body>
