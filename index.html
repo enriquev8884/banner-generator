@@ -16,44 +16,46 @@
     <!--font-family: 'Petit Formal Script', cursive;-->
     <script>
         $(function() {
-            $('#banner').css("display", "none");
-
+            $('#banner').css("display", "none"); // hides result banner
+            // randomize button
             $('#random').click(function() {
                 var user_name = $('#userName').val();
-                var ranColor = ["#ff3333", "#3333ff", "#9900cc"];
-                var ranFont = ["'Indie Flower', cursive", "'Permanent Marker', cursive", "'Petit Formal Script', cursive"];
-                var fontPick = ranFont[Math.floor(Math.random() * ranFont.length)];
-                var colorPick = ranColor[Math.floor(Math.random() * ranColor.length)];
-                $('#userInput').html(user_name).css("font-family", fontPick);
-                $('#banner').css("background-color", colorPick);
-                $('#bottomSticker_banner').css("background-color", colorPick);
-                $('#form').fadeOut(2);
-                $('#banner').fadeIn(200);
-                $('#bottomSticker_banner').fadeIn(200);
+                var ranColor = ["#ff3333", "#3333ff", "#9900cc"]; // creates var 
+                var ranFont = ["'Indie Flower', cursive", "'Permanent Marker', cursive", "'Petit Formal Script', cursive"]; //creates var
+                var fontPick = ranFont[Math.floor(Math.random() * ranFont.length)]; // math.floor returns the largest integer less than or equal to a given number
+                var colorPick = ranColor[Math.floor(Math.random() * ranColor.length)]; // math.random returns random number from 1-length of var
+                $('#userInput').html(user_name).css("font-family", fontPick); // uses value of input and changes font randomized var fontPick
+                $('#banner').css("background-color", colorPick); // changes banner color to randomized color from var colorPick
+                $('#bottomSticker_banner').css("background-color", colorPick); //bottom of banner changes to color too
+                $('#form').fadeOut(2); // hides the input bannner
+                $('#banner').fadeIn(200); // shows result
+                $('#bottomSticker_banner').fadeIn(200); // shows bottom banner
+                // reset button
                 $('#reset').click(function() {
-                    location.reload();
+                    location.reload(); // reloads page
                 });
 
 
 
 
-            })
-
+            });
+            // generate button 
             $("#submit").click(function() {
-                var userFont = $("input[name='font']:checked", '#userForm').val();
-                var user_name = $('#userName').val();
-                $('#userInput').html(user_name).css("font-family", userFont);
+                // users name
+                var userFont = $("input[name='font']:checked", '#userForm').val(); // checks which radio was selected for font
+                var user_name = $('#userName').val(); // gets value of text to get the name of user
+                $('#userInput').html(user_name).css("font-family", userFont); // changes div html to users name and their chosen font
 
-
-                var userColor = $("input[name='color']:checked", '#userForm').val();
-                $('#banner').css("background-color", userColor);
-                $('#bottomSticker_banner').css("background-color", userColor);
-                $('#form').fadeOut(2);
-                $('#banner').fadeIn(200);
-                $('#bottomSticker_banner').fadeIn(200);
-
-                $('#reset').click(function() {
-                    location.reload();
+                // users color
+                var userColor = $("input[name='color']:checked", '#userForm').val(); // checks which radio was selected for color
+                $('#banner').css("background-color", userColor); // changes css color of banner
+                $('#bottomSticker_banner').css("background-color", userColor); // changes css color of the bottom part of the banner
+                $('#form').fadeOut(2); // hides the input bannner
+                $('#banner').fadeIn(200); // shows result
+                $('#bottomSticker_banner').fadeIn(200); // shows bottom banner
+                // reset button
+                $('#reset').click(function() { 
+                    location.reload(); // reloads page
                 });
             });
         });
@@ -91,7 +93,7 @@
 
                 </div>
                 <button type="submit" id="submit">Generate!
-                    <button style="margin-left: 5px;"type="submit" id="random">Randomize!
+                    <button style="margin-left: 5px;" type="submit" id="random">Randomize!
             </div>
             <div id="bottomSticker_form"></div>
         </div>
